@@ -12,6 +12,8 @@ public class LoginPage extends BasePage {
 
     public void page(){
 
+        System.out.println( "Login Page");
+
     }
 
 

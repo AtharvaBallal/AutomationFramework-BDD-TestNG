@@ -12,7 +12,7 @@ public class LoginStep {
 
     @Given("user is on the login page")
     public void user_is_on_the_login_page() {
-        DriverFactory.getDriver().get("htts://www.google.co.in/");
+        loginPage.page();
 
     }
 

@@ -1,6 +1,6 @@
 package TestRunner;
 import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
+import io.cucumber.testng.CucumberOptions;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import org.junit.runner.RunWith;
 import org.testng.annotations.DataProvider;
@@ -11,7 +11,8 @@ import org.testng.annotations.DataProvider;
 
         features = "src/test/resources/Features",
         glue = {"StepDefinitions", "AppHooks"},
-        plugin = {"pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
+        plugin = {"pretty",
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
                 "timeline:src/test/resources/Reports/test-output-thread/",
                 "rerun:src/test/resources/RerunLog/Rerun.txt"
         },

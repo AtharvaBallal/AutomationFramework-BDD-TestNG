@@ -1,4 +1,4 @@
-package AppHook;
+package AppHooks;
 
 import Drivers.DriverFactory;
 import Utils.ConfigReader;
