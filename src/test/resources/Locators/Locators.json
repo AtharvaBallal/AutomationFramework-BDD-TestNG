@@ -1,0 +1,51 @@
+[
+  {
+    "LocatorName": "title",
+    "type": "tagName",
+    "value": "title",
+    "Description": ""
+  },
+  {
+    "LocatorName": "Signup / Login",
+    "type": "xpath",
+    "value": "//a[text()=' Signup / Login']",
+    "Description": "Signup locator on home page"
+  },
+  {
+    "LocatorName": "New User Signup!",
+    "type": "xpath",
+    "value": "//h2[text() = 'New User Signup!']",
+    "Description": "Signup locator on home page"
+  },
+
+  {
+    "LocatorName": "signup-name",
+    "type": "xpath",
+    "value": "//input[@data-qa='signup-name']",
+    "Description": "Signup name locator on signup page"
+  },
+
+  {
+    "LocatorName": "signup-email",
+    "type": "xpath",
+    "value": "//input[@data-qa='signup-email']",
+    "Description": "Signup name locator on signup page"
+  },
+
+  {
+    "LocatorName": "Signup",
+    "type": "xpath",
+    "value": "//button[@data-qa='signup-button']",
+    "Description": "Signup button locator on signup page"
+  },
+
+  {
+    "LocatorName": "ENTER ACCOUNT INFORMATION",
+    "type": "xpath",
+    "value": "//b[text()='Enter Account Information']",
+    "Description": ""
+  }
+
+
+
+]

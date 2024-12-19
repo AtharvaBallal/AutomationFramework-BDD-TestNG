@@ -61,6 +61,13 @@
         </dependency>
 
 
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>2.0.9</version>
+        </dependency>
+
+
         <!-- https://mvnrepository.com/artifact/org.testng/testng -->
         <dependency>
             <groupId>org.testng</groupId>
@@ -118,50 +125,52 @@
 
             <!--            Plugin used for parallel execution with TestNg-->
 
-            <!--            <plugin>-->
-            <!--                <groupId>org.apache.maven.plugins</groupId>-->
-            <!--                <artifactId>maven-surefire-plugin</artifactId>-->
-            <!--                <version>${maven.surefire.version}</version>-->
-            <!--                <configuration>-->
-            <!--                    <includes>-->
-            <!--                        <include>**/ParallelRun.java</include>-->
-            <!--                    </includes>-->
-            <!--                    <parallel>methods</parallel>-->
-            <!--                    <threadCount>4</threadCount>-->
-            <!--                    <useUnlimitedThreads>false</useUnlimitedThreads>-->
-            <!--                </configuration>-->
-            <!--            </plugin>-->
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-surefire-plugin</artifactId>
+                            <version>${maven.surefire.version}</version>
+                            <configuration>
+                                <includes>
+                                    <include>**/ParallelRun.java</include>
+                                </includes>
+                                <parallel>methods</parallel>
+                                <threadCount>4</threadCount>
+                                <useUnlimitedThreads>false</useUnlimitedThreads>
+                            </configuration>
+                        </plugin>
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-failsafe-plugin</artifactId>
-                <version>3.0.0-M3</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>integration-test</goal>
-                        </goals>
-                        <configuration>
-                            <!--                            UNCOMMENT - To add any exclusions if required-->
-                            <!--                            <excludes> <exclude>**/*IT*.java</exclude> </excludes>-->
-                            <includes>
-                                <!--                                UNCOMMENT BELOW LINE- To execute feature files with a single runner-->
-                                <include>**/RunCkues.java</include>
-                                <!--                                UNCOMMENT BELOW LINE - To execute feature files with multiple runners-->
-                                <!--                                <include>**/*Runner.java</include>-->
-                            </includes>
-                            <!--                            UNCOMMENT BELOW 3 LINES - To execute using parallel or combination option-->
-                            <parallel>methods</parallel>
-                            <threadCount>4</threadCount>
-                            <perCoreThreadCount>true</perCoreThreadCount>
-                            <!--                            UNCOMMENT BELOW 3 LINES - To execute using forking or combination option-->
-                            <!--                            <forkCount>2</forkCount>-->
-                            <!--                            <reuseForks>true</reuseForks>-->
-                            <!--                            <reportsDirectory>${project.build.directory}/failsafe-reports_${surefire.forkNumber}</reportsDirectory>-->
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+            <!--            Plugin used for parallel execution with Junit-->
+
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-failsafe-plugin</artifactId>-->
+<!--                <version>3.0.0-M3</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <goals>-->
+<!--                            <goal>integration-test</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            &lt;!&ndash;                            UNCOMMENT - To add any exclusions if required&ndash;&gt;-->
+<!--                            &lt;!&ndash;                            <excludes> <exclude>**/*IT*.java</exclude> </excludes>&ndash;&gt;-->
+<!--                            <includes>-->
+<!--                                &lt;!&ndash;                                UNCOMMENT BELOW LINE- To execute feature files with a single runner&ndash;&gt;-->
+<!--                                <include>**/RunCkues.java</include>-->
+<!--                                &lt;!&ndash;                                UNCOMMENT BELOW LINE - To execute feature files with multiple runners&ndash;&gt;-->
+<!--                                &lt;!&ndash;                                <include>**/*Runner.java</include>&ndash;&gt;-->
+<!--                            </includes>-->
+<!--                            &lt;!&ndash;                            UNCOMMENT BELOW 3 LINES - To execute using parallel or combination option&ndash;&gt;-->
+<!--                            <parallel>methods</parallel>-->
+<!--                            <threadCount>4</threadCount>-->
+<!--                            <perCoreThreadCount>true</perCoreThreadCount>-->
+<!--                            &lt;!&ndash;                            UNCOMMENT BELOW 3 LINES - To execute using forking or combination option&ndash;&gt;-->
+<!--                            &lt;!&ndash;                            <forkCount>2</forkCount>&ndash;&gt;-->
+<!--                            &lt;!&ndash;                            <reuseForks>true</reuseForks>&ndash;&gt;-->
+<!--                            &lt;!&ndash;                            <reportsDirectory>${project.build.directory}/failsafe-reports_${surefire.forkNumber}</reportsDirectory>&ndash;&gt;-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
 
 
         </plugins>
