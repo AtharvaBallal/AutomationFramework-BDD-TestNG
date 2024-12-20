@@ -32,16 +32,17 @@ This is a feature-rich and scalable test automation framework built with **Java*
 ## Tools & Dependencies
 ### Core Libraries
 
-Library	Version	Purpose
-Java	17	Programming Language
-Cucumber	7.16.1	BDD framework for writing Gherkin test scenarios
-TestNG	7.10.2	Test execution framework
-Selenium WebDriver	4.26.0	Browser automation
-Extent Reports	1.14.0	Generate detailed test execution reports
-Apache POI	4.1.2	Read and write Excel files
-Jackson Databind	2.15.0	JSON processing
-SLF4J	2.0.16	Logging framework
-JUnit	4.13.2	Additional integration for test behavior (if required)
+| Library | Version | Purpose |
+| --- | --- | --- |
+| **Java** | 17 | Programming Language |
+| **Cucumber** | 7.16.1 | BDD framework for writing Gherkin test scenarios |
+| **TestNG** | 7.10.2 | Test execution framework |
+| **Selenium WebDriver** | 4.26.0 | Browser automation |
+| **Extent Reports** | 1.14.0 | Generate detailed test execution reports |
+| **Apache POI** | 4.1.2 | Read and write Excel files |
+| **Jackson Databind** | 2.15.0 | JSON processing |
+| **SLF4J** | 2.0.16 | Logging framework |
+| **JUnit** | 4.13.2 | Additional integration for test behavior (if required) |
 
 
 ### Build Tool
