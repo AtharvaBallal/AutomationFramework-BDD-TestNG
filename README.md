@@ -83,7 +83,7 @@ AutomationFramework-BDD-TestNG/
 ### Setup
 1. Clone the repository:
 
-   git clone https://github.com/AtharvaBallal/AutomationFramework-BDD-TestNG
+   git clone https://github.com/AtharvaBallal/AutomationFramework-BDD-TestNG <br>
    cd AutomationFramework-BDD-TestNG
 
 2. Install dependencies:
