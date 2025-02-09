@@ -25,6 +25,8 @@ public class ApplicationHooks {
 
     }
 
+
+
     @Before(order = 1)
     public void launchBrowser(){
         String browserName = prop.getProperty("browser");
@@ -40,11 +42,10 @@ public class ApplicationHooks {
     }
 
     @After(order = 0)
-    public void quitBrowser(){
-
-        driver.quit();
-
+    public void quitBrowser() {
+        DriverFactory.quitDriver();
     }
+
 
     @After(order = 1)
     public void tearDown(Scenario scenario){

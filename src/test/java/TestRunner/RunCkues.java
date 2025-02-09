@@ -16,7 +16,7 @@ import org.testng.annotations.DataProvider;
                 "timeline:src/test/resources/Reports/test-output-thread/",
                 "rerun:src/test/resources/RerunLog/Rerun.txt"
         },
-        tags = "@registeruser"
+        tags = "@Login"
 )
 public class RunCkues extends AbstractTestNGCucumberTests {
 
