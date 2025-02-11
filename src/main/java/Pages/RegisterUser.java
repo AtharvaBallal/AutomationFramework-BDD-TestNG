@@ -3,7 +3,7 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class RegisterUser extends BasePage{
+public class RegisterUser extends PageActions {
 
     private final WebDriver driver;
 

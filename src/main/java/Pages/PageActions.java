@@ -2,6 +2,7 @@ package Pages;
 
 import Drivers.DriverFactory;
 import Utils.LocatorReader;
+import Utils.Reporting;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -13,10 +14,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class BasePage{
+public class PageActions {
+
     WebDriver driver = DriverFactory.getDriver();
-
-
+    Reporting report = new Reporting();
 
     // Validate Locator
     private void validateLocator(String locator) {
@@ -29,7 +30,7 @@ public class BasePage{
 
 
     // Click Action
-    public void click (String locator){
+    public void click(String locator) {
         validateLocator(locator);
         try {
             By element = LocatorReader.getLocator(locator);
@@ -37,14 +38,16 @@ public class BasePage{
             WebElement clickableElement = wait.until(ExpectedConditions.elementToBeClickable(element));
             clickableElement.click();
             System.out.println("Clicked element with locator: " + locator);
+            report.logReport("Click on " + locator, true);
         } catch (Exception e) {
             System.err.println("Error clicking element with locator: " + locator + ". Error: " + e.getMessage());
+            report.logReport("Click on " + locator, false);
             throw e;
         }
     }
 
     // Send Keys Action
-    public void enterValue (String text, String locator){
+    public void enterValue(String text, String locator) {
         validateLocator(locator);
         try {
             By element = LocatorReader.getLocator(locator);
@@ -53,14 +56,16 @@ public class BasePage{
             inputElement.clear();
             inputElement.sendKeys(text);
             System.out.println("Entered text in element with locator: " + locator);
+            report.logReport("Enter value in " + locator, true);
         } catch (Exception e) {
             System.err.println("Error entering text in element with locator: " + locator + ". Error: " + e.getMessage());
+            report.logReport("Enter value in " + locator, false);
             throw e;
         }
     }
 
     // Get Text Action
-    public String getText (String locator){
+    public String getText(String locator) {
         validateLocator(locator);
         try {
             By element = LocatorReader.getLocator(locator);
@@ -76,7 +81,7 @@ public class BasePage{
     }
 
     // Select Dropdown by Visible Text
-    public void selectDropdownByText (String visibleText, String locator){
+    public void selectDropdownByText(String visibleText, String locator) {
         validateLocator(locator);
         try {
             By element = LocatorReader.getLocator(locator);
@@ -91,7 +96,7 @@ public class BasePage{
     }
 
     // Get Attribute Value
-    public String getAttribute (String attributeName, String locator){
+    public String getAttribute(String attributeName, String locator) {
         validateLocator(locator);
         try {
             By element = LocatorReader.getLocator(locator);
@@ -107,7 +112,7 @@ public class BasePage{
     }
 
     // Hover Over an Element
-    public void hoverOver (String locator){
+    public void hoverOver(String locator) {
         validateLocator(locator);
         try {
             By element = LocatorReader.getLocator(locator);
@@ -123,7 +128,7 @@ public class BasePage{
     }
 
     // Check if Element is Displayed
-    public boolean isDisplayed (String locator){
+    public boolean isDisplayed(String locator) {
         validateLocator(locator);
         try {
             By element = LocatorReader.getLocator(locator);
@@ -139,7 +144,7 @@ public class BasePage{
     }
 
     // Scroll to Element
-    public void scrollTo (String locator){
+    public void scrollTo(String locator) {
         validateLocator(locator);
         try {
             By element = LocatorReader.getLocator(locator);
@@ -154,7 +159,7 @@ public class BasePage{
     }
 
     // Wait for Element to be Visible
-    public void waitForVisibility (int timeoutSeconds, String locator){
+    public void waitForVisibility(int timeoutSeconds, String locator) {
         validateLocator(locator);
         try {
             By element = LocatorReader.getLocator(locator);
@@ -168,7 +173,7 @@ public class BasePage{
     }
 
     // Drag and Drop
-    public void dragAndDrop (String sourceLocator, String targetLocator){
+    public void dragAndDrop(String sourceLocator, String targetLocator) {
         validateLocator(sourceLocator);
         validateLocator(targetLocator);
         try {
