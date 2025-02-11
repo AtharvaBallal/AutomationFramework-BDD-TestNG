@@ -124,6 +124,7 @@ public class Reporting {
         }
     }
 
+
     public void setValues(String featurefile, String featureName, String scenarioName, String env, String url) {
         this.featurefile = featurefile;
         this.feature = featureName;

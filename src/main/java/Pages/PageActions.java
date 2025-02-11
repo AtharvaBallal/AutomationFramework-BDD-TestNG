@@ -11,7 +11,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 
 public class PageActions {
@@ -19,7 +18,7 @@ public class PageActions {
     WebDriver driver = DriverFactory.getDriver();
     Reporting report = new Reporting();
 
-    // Validate Locator
+       // Validate Locator
     private void validateLocator(String locator) {
         if (locator == null || locator.trim().isEmpty()) {
             String errorMessage = "Locator cannot be null or empty";
