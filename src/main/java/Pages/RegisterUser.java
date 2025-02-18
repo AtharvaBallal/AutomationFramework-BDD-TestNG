@@ -11,10 +11,6 @@ public class RegisterUser extends PageActions {
         this.driver = driver;
     }
 
-    public void getUrl(String url){
-        driver.get(url);
-
-    }
 
     public void verifyPage(){
         String pageName = driver.findElement(By.tagName("title")).getText();
